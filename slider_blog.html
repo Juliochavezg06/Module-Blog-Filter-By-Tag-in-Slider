@@ -1,0 +1,64 @@
+{% set blogid = module.blog %}
+{% set tag = module.tag_field %}
+{% if module.filter_tag %}
+{% set topic_posts = blog_recent_tag_posts(blogid, tag, 5) %}
+{% else %}
+{% set topic_posts = blog_recent_posts(blogid, 5) %}
+{% endif %}
+<div id="blog__top" data-sal="slide-right" data-sal-duration="650" style="padding-top: {{ module.section_settings.padding_top }}px; padding-bottom: {{ module.section_settings.padding_bottom }}px">
+  <div class="container">
+    <div class="columns is-gapless is-vcentered">
+      <div class="column is-6">
+        <div class="header__webinar">
+          <div class="icon">
+            <img src="https://f.hubspotusercontent10.net/hubfs/8501913/Ellipse%203.svg" alt="point">
+          </div>
+          <div class="title">
+            <h2 style="color: {{ module.color_header.color }};">{{ module.Title }}</h2>
+          </div>
+        </div>
+        <div class="description">
+          <p style="color: {{ module.color_description.color }};">
+            {{ module.description }}
+          </p>
+        </div>
+      </div>
+      <div class="column is-6">
+        <div class="cta__webinar__all">
+          {% cta guid="{{ module.cta_field }}" %}
+        </div>
+      </div>
+    </div>
+    <div class="slider__post">
+      <div class="post_item_event">
+
+        {% for post in topic_posts %}
+        <div class="recent__post__item">
+          <div class="tease__image" style="background-image: url(&quot;{{ post.featured_image }}&quot;);"></div>
+          <div class="content__post">  
+            <div class="post-title title__recent">{{ post.name }}</div>
+            {% if post.tag_list %}
+            <div class="space__tag">
+              <span class="topic__tag">
+                {% for tag in post.tag_list %}
+                <a class="tag__span" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>{% if not loop.last %},{% endif %}
+                {% endfor %}
+              </span>
+            </div>
+            {% endif %}
+            <div class="excert__post">
+              <p>
+                {{ post.post_list_content|truncatehtml(120, '...' , false)|striptags }}
+              </p>
+            </div>
+            <div class="read__more">
+              <a href="{{ post.absolute_url }}">SEE THIS EVENT <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>  
+</div>
