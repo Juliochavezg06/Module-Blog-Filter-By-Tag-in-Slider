@@ -1,0 +1,119 @@
+.header__webinar{
+  display: flex;
+  align-items: center;
+}
+.title h2{
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height:42px;
+  margin-bottom: 0px;
+  margin-left: 15px;
+}
+.description p{
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  width: 400px;
+}
+.recent__post__item{
+  margin: 12px;
+}
+.recent__post__item{
+  background: #FFFFFF;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.tease__image {
+  border-radius: 10px 10px 0 0;
+}
+.content__post{
+  padding: 25px;
+}
+.title__recent{
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 28px;
+  color: #000000;
+}
+.space__tag{
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.excert__post{
+  margin-top: 12px;
+}
+.excert__post p{
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #4D4D4D;
+}
+.tag__span{
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  color: #f9523a !important;
+  border: 1px solid #f9523a;
+  border-radius: 50px;
+  width: auto!important;
+  padding: 3px 15px;
+}
+.read__more{
+  display: flex;
+  justify-content: flex-end;
+}
+.read__more a{
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 17px;
+  color: #F9523A;
+}
+.read__more a:hover{
+  color: #f6be25;
+}
+.slick-custom-prev{
+  position: absolute;
+  top: 40%;
+  left: -55px;
+  font-size: 30px;
+  background: #C4C4C4;
+  color: #fff;
+  padding: 0px 20px;
+  border-radius: 5px;
+}
+.slick-custom-next{
+  position: absolute;
+  top: 40%;
+  right: -55px;
+  font-size: 30px;
+  background: #C4C4C4;
+  color: #fff;
+  padding: 0px 20px;
+  border-radius: 5px;
+}
+.cta__webinar__all{
+  display: flex;
+  justify-content: flex-end;
+}
+@media (max-width: 435px){
+  .cta__webinar__all{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 15px;
+    margin-bottom: 40px;
+  }
+}
